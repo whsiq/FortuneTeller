@@ -43,9 +43,16 @@ public class FortuneTellerFrame extends JFrame {
         mainPnl = new JPanel();
         mainPnl.setLayout(new BorderLayout());
 
+        createTopPanel();
         mainPnl.add(topPnl, BorderLayout.NORTH);
+
+        createMiddlePanel();
         mainPnl.add(midPnl, BorderLayout.CENTER);
+
+        createBottomPanel();
         mainPnl.add(lowPnl, BorderLayout.SOUTH);
+
+        add(mainPnl);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
