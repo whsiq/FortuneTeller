@@ -47,11 +47,11 @@ public class FortuneTellerFrame extends JFrame {
         mainPnl.setLayout(new BorderLayout());
 
         mainPnl.add(topPnl, BorderLayout.NORTH);
+        mainPnl.add(midPnl, BorderLayout.CENTER);
 
     }
 
     private void createTopPanel() {
-
         topPnl = new JPanel();
         imgIcon = new ImageIcon("src/fortuneImg.png");
         titleLbl = new JLabel("Fortune Teller", imgIcon, JLabel.CENTER);
@@ -60,6 +60,16 @@ public class FortuneTellerFrame extends JFrame {
         titleLbl.setHorizontalTextPosition(JLabel.CENTER);
 
         topPnl.add(titleLbl);
+    }
+
+    private void createMiddlePanel() {
+        midPnl = new JPanel();
+        fortuneTA = new JTextArea(15, 60);
+        fortuneTA.setEditable(false);
+        fortuneTA.setFont(fortuneFont);
+        scroller = new JScrollPane(fortuneTA);
+
+        midPnl.add(scroller);
     }
 
 }
