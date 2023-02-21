@@ -35,9 +35,10 @@ public class FortuneTellerFrame extends JFrame {
 
     public FortuneTellerFrame() {
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        setTitle("Fortune Teller");
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = kit.getScreenSize();
+        int screenHeight = screenSize.height;
+        int screenWidth = screenSize.width;
 
         mainPnl = new JPanel();
         mainPnl.setLayout(new BorderLayout());
@@ -46,6 +47,11 @@ public class FortuneTellerFrame extends JFrame {
         mainPnl.add(midPnl, BorderLayout.CENTER);
         mainPnl.add(lowPnl, BorderLayout.SOUTH);
 
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setTitle("Fortune Teller");
+        setSize((int) (screenWidth * .75), (int) ((screenHeight) * .75));
+        setLocation(screenWidth / 8, screenHeight / 8);
     }
 
     private void createTopPanel() {
